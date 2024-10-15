@@ -1,3 +1,3 @@
 module.exports={
-  testEnviorment: "node",
+  testEnvironment: "node",
 };
