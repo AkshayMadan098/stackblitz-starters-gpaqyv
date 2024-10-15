@@ -3,7 +3,7 @@ const http = require('http');
 const { getAllMovies } = require('../controllers');
 const { app } = require('../index');
 
-jest.mock("/../controllers",()=>({
+jest.mock("../controllers", () => ({
   ...jest.requireActual("../controllers"),
   getAllMovies:jest.fn(),
 }));
@@ -57,7 +57,7 @@ describe('Controller Function tests', () => {
       const result = await request(server).get('/movies');
       expect(result.status).toBe(200);
       expect(result.body).toEqual({
-        movies = [
+        movies : [
           {
             'movieId': 1,
             'title': 'Inception',
@@ -85,7 +85,7 @@ describe('Controller Function tests', () => {
       const result = await request(server).get('/movies/details/1');
       expect(result.status).toBe(200);
       expect(result.body).toEqual({
-        movie = {
+        movie : {
           'movieId': 1,
           'title': 'Inception',
           'genre': 'Sci-Fi',
