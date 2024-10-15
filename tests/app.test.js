@@ -82,7 +82,7 @@ describe('Controller Function tests', () => {
     });
 
     it('GET /movies/details/:id should get a movie by id', async () => {
-      const result = await request(server).get('/movies/details/1');
+      const result = await request(server).get('/movies/detail/1');
       expect(result.status).toBe(200);
       expect(result.body).toEqual({
         movie : {
